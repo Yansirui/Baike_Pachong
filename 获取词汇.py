@@ -3,7 +3,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 import re
 import json
-
+#百度健康所有疾病和症状爬取 Selenium
 terms=[]
 same=[]
 browser = webdriver.Edge(r"D:\Microsoft\msedgedriver.exe")
@@ -80,7 +80,7 @@ for element in elements:
                 break
         time.sleep(1)
 print('百度健康词汇：',len(terms))
-
+#百度百科健康医疗相关词条爬取，显示有4w，拉到最下面只有200个左右，所以需要自己做词汇扩展
 browser.get('https://baike.baidu.com/wikitag/taglist?tagId=76625')
 for i in range(20):
     browser.execute_script('window.scrollBy(0,1000)')
